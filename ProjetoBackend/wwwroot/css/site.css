@@ -122,14 +122,14 @@ hr {
     background: #948274;
 }
 
-.col {
+/*.col {
     border-radius: 5px;
     font-size: 15px;
     width: 325px;
     height: 40px;
     background-color: #E4E0E1;
     border: 2px solid #D6C0B3;
-}
+}*/
 
 .icone {
     border-radius: 5px;
@@ -271,7 +271,6 @@ hr {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
     margin: 0;
 }
 
@@ -281,4 +280,8 @@ hr {
     right: 0;
     bottom: 0;
     margin-bottom: 40px;
+}
+
+center ~ * {
+    display: none !important;
 }

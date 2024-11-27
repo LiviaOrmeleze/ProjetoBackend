@@ -14,10 +14,10 @@
     </form>
 
     <p>
-        <a asp-action="Create" class="btn btn-lg btn-primary btnAdicionar mt-3"><ion-icon name="person-add-outline"></ion-icon>  Adicionar Cliente</a>
+        <a asp-action="Create" class="btn btn-lg btn-primary btnAdicionar mt-3"><ion-icon name="person-add-outline"></ion-icon>Adicionar Cliente</a>
     </p>
-    <table class="table styled-table ">
-        <thead>
+    <table class="w-100" style="background:#D6C0B3!important;color:#493628;">
+        <thead style="background:#D6C0B3!important;border:1px solid #AB886D;">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Nome)
@@ -43,7 +43,7 @@
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="border:1px solid #AB886D">
             @foreach (var item in Model)
             {
                 <tr>
