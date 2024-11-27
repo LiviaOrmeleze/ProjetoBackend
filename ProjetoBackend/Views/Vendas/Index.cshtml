@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ProjetoBackend.Models.Venda>
+
+@{
+    ViewData["Title"] = "Vendas";
+}
+
+<div class="container">
+
+
+    <h1 class="Titulos">Vendas</h1>
+
+    <form asp-action="Search" method="get">
+        <input type="text" name="nome" class="col" placeholder="Buscar cliente por nome..." />
+        <button type="submit" class="icone"><ion-icon name="search"></ion-icon></button>
+    </form>
+
+    <p>
+        <a asp-action="Create" class="btn btn-lg btn-primary btnAdicionar mt-3"><ion-icon name="person-add-outline"></ion-icon>  Adicionar Venda</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NotaFiscal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataVenda)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValorTotal)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NotaFiscal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente.Celular)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataVenda)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ValorTotal)
+                    </td>
+                    <td>
+                        <a asp-controller="ItensVendas" asp-action="Index" class="btn btnEdd" asp-route-id="@item.VendaId">Produtos</a>
+                        <a asp-controller="ServicosVendas" asp-action="Index" class="btn btnEdd" asp-route-id="@item.VendaId">Serviços</a>
+                        <a asp-action="Edit" class="btn btnEdd" asp-route-id="@item.VendaId">Editar</a>
+                        <a asp-action="Details" class="btn btnEdd" asp-route-id="@item.VendaId">Detalhes</a>
+                        <a asp-action="Delete" class="btn btnEdd" asp-route-id="@item.VendaId">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

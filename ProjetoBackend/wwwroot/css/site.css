@@ -1,0 +1,284 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    color: black
+}
+
+
+.custom-button { /*botão de cima */
+    background-color: #D6C0B3; /* Cor de fundo amarelinha */
+    color: #493628; /* Cor do texto em rosa */
+    border: 2px solid #493628; /* Borda rosa */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 5px 20px; /* Espaçamento interno */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    width: 140px;
+}
+
+    .custom-button:hover {
+        background-color: #493628; /* Cor de fundo rosa ao passar o mouse */
+        color: #D6C0B3; /* Cor do texto branca ao passar o mouse */
+    }
+
+.login { /* caixa de fundo da página login*/
+    background-color: #C7B4A6;
+    border-radius: 20px;
+    padding: 30px 30px 30px 30px;
+    align-items: center;
+}
+
+.btnLogin { /* botões da página login*/
+    background-color: #948274;
+    border: 2px solid #948274;
+    color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 12px 5px;
+    font-size: 16px;
+}
+
+
+    .btnLogin:hover { /*adição de coisas de acordo com o btn Login para o botão de cadastrar*/
+        background-color: #493628; /* Cor de fundo rosa ao passar o mouse */
+        color: #D6C0B3;
+        border: 2px solid #948274;
+    }
+
+.Cadastrar { /* caixa de fundo da página cadastrar*/
+    background-color: #C7B4A6;
+    border-radius: 20px;
+    padding: 40px 40px 40px 40px;
+}
+
+.btnCadastrar { /* botões da página cadastrar*/
+    background-color: #948274;
+    border: 2px solid #948274;
+    color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 12px 5px;
+    font-size: 16px;
+}
+
+
+    .btnCadastrar:hover {
+        background-color: #493628; /* Cor de fundo rosa ao passar o mouse */
+        color: #D6C0B3;
+        border: 2px solid #948274;
+    }
+
+hr {
+    width: 120px;
+}
+
+.Titulos {
+    color: #493628;
+}
+
+.btnAdicionar {
+    background-color: #AB886D;
+    width: 200px;
+    font-size: 15px;
+    border: 2px solid;
+}
+
+    .btnAdicionar:hover {
+        background-color: #493628; /* Cor de fundo rosa ao passar o mouse */
+        color: #D6C0B3;
+        border: 2px solid #D6C0B3;
+    }
+
+.tabela {
+    background-color: #D6C0B3;
+    color: #493628;
+    border: #AB886D;
+}
+
+.styled-table {
+    background: #948274;
+}
+
+.col {
+    border-radius: 5px;
+    font-size: 15px;
+    width: 325px;
+    height: 40px;
+    background-color: #E4E0E1;
+    border: 2px solid #D6C0B3;
+}
+
+.icone {
+    border-radius: 5px;
+    font-size: 15px;
+    width: 50px;
+    height: 40px;
+    background-color: #AB886D;
+    border: #AB886D;
+    color: #D6C0BD;
+}
+
+.btnEdd {
+    background-color: #AB886D;
+    width: 100px;
+    font-size: 15px;
+    border: 2px solid #E4E0E1;
+    color: #E4E0E1;
+}
+
+    .btnEdd:hover {
+        background-color: #493628; /* Cor de fundo rosa ao passar o mouse */
+        color: #D6C0B3;
+        border: 2px solid #D6C0B3;
+    }
+
+
+.textoPI { /*texto da página inicial*/
+    color: #493628;
+    font-size: 30px;
+    width: 60%;
+    margin: auto auto;
+}
+
+
+
+.tituloSN {
+    color: #493628;
+    font-size: 60px;
+    justify-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.btnSalVol { /* botões da página login*/
+    background-color: #AB886D;
+    border: 2px solid #E4E0E1;
+    color: #E4E0E1;
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+}
+
+    .btnSalVol:hover { /*adição de coisas de acordo com o btn Login para o botão de cadastrar*/
+        background-color: #493628; /* Cor de fundo rosa ao passar o mouse */
+        color: #D6C0B3;
+        border: 2px solid #D6C0B3;
+    }
+
+.dados {
+    border: 2px solid #493628;
+}
+
+.caixaSN1 {
+    background: #D6C0B3;
+    border-radius: 25px;
+    color: #493628;
+    padding: 40px 40px 40px 40px;
+    margin-bottom: 150px;
+    color: #493628;
+    font-size: 20px;
+    width: 1400px;
+}
+
+.caixaSN2 {
+    background: #D6C0B3;
+    border-radius: 25px;
+    color: #493628;
+    padding: 40px 40px 40px 40px;
+    margin-bottom: 150px;
+    color: #493628;
+    font-size: 20px;
+    width: 1400px;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.main {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.imgDireita {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    margin-top: 40px;
+}
+
+.imgEsquerda {
+    float: left;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 40px;
+}
+
+
+.conteudoHome {
+    display: block;
+    height: 80vh;
+    width: 100%;
+    padding-top: 160px;
+}
+
+.ajustar {
+    margin: -300px;
+}
+
+.fotos {
+    border: 1px solid #493628;
+    border-radius: 350px;
+    height: 350px;
+    width: 350px;
+}
+
+.fundoSN {
+    background-image: url('/img/fundoSN.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.imgCd {
+    float: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 40px;
+}

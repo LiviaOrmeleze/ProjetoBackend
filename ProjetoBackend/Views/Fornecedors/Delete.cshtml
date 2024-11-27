@@ -1,0 +1,55 @@
+﻿@model ProjetoBackend.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2 class="titulos">Deletar</h2>
+
+<h3 class="titulos">Deseja excluir esse fornecedor?</h3>
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Celular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Celular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CnpjCpf)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CnpjCpf)
+        </dd>
+    </dl>
+
+    <div class="row">
+
+        <div class="col col-md-4 mt-4">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="FornecedorId" />
+                <input type="submit" value="Delete" class="btn btnSalVol" />
+            </form>
+        </div>
+        <div class="col-10 col-md mt-4">
+        </div>
+        <div class="col col-md-4 mt-4">
+            <a class="btn btnSalVol " asp-action="Index">Voltar</a>
+        </div>
+
+    </div>
+</div>

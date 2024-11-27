@@ -1,0 +1,53 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+
+
+<div class="row justify-content-center align-items-center ">
+
+    <div class="col-3 login">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h2 style="color: rgba(0, 0, 0, 0.5)">Cadastrar</h2>
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Nome" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" style="border-radius: 15px" />
+                <label asp-for="Input.Nome">Nome completo</label>
+                <span asp-validation-for="Input.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Telefone" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 15px" />
+                <label asp-for="Input.Telefone">Telefone</label>
+                <span asp-validation-for="Input.Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.CPF" class="form-control " autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 15px" />
+                <label asp-for="Input.CPF">CPF</label>
+                <span asp-validation-for="Input.CPF" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 15px" />
+                <label asp-for="Input.Email">E-mail</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-cd btn-primary btnCadastrar">
+                Entrar
+            </button>
+            <div>
+                <p class="text-center" style="color: rgba(0, 0, 0, 0.5);  padding: 10px 10px">
+                    Ao se cadastrar ou realizar o login, você concorda com os Termos, Condições e Políticas da Nuvem de Algodão e Política de Privacidade.
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<slan>
+    <img src="~/img/coelhocadastrar.png" alt="Desenho de um coelhinho branco com as orelhas para baixo, segurando uma grande tulipa rosa para cima" width="10" height="400" class="col-2 ms-10 imgCd" />
+</slan>
