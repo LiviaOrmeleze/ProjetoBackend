@@ -12,9 +12,9 @@
     <div class="col-10 col-md mt-4">
     </div>
 
-    <div class="row">
-        <div class="col-12 col-md-7 mt-2 Titulos">
-            <form asp-action="Edit">
+    <form asp-action="Edit">
+        <div class="row">
+            <div class="col-12 col-md-7 mt-2 Titulos">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="ProdutoId" />
                 <div class="form-group">
@@ -22,49 +22,50 @@
                     <input asp-for="Nome" class="form-control" />
                     <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
-            </form>
-        </div>
+            </div>
 
-        <div class="col-12 col-md-5 mt-2 Titulos">
-            <div class="form-group">
-                <label asp-for="Preco" class="control-label"></label>
-                <input asp-for="Preco" class="form-control" />
-                <span asp-validation-for="Preco" class="text-danger"></span>
+            <div class="col-12 col-md-5 mt-2 Titulos">
+                <div class="form-group">
+                    <label asp-for="Preco" class="control-label"></label>
+                    <input asp-for="Preco" class="form-control" />
+                    <span asp-validation-for="Preco" class="text-danger"></span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-12 col-md-5 mt-2 Titulos">
-            <div class="form-group">
-                <label asp-for="Estoque" class="control-label"></label>
-                <input asp-for="Estoque" class="form-control" />
-                <span asp-validation-for="Estoque" class="text-danger"></span>
+        <div class="row">
+            <div class="col-12 col-md-5 mt-2 Titulos">
+                <div class="form-group">
+                    <label asp-for="Estoque" class="control-label"></label>
+                    <input asp-for="Estoque" class="form-control" />
+                    <span asp-validation-for="Estoque" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 mt-2 Titulos">
+
+                <div class="form-group">
+                    <label asp-for="CategoriaId" class="control-label"></label>
+                    <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId"></select>
+                    <span asp-validation-for="CategoriaId" class="text-danger"></span>
+                </div>
             </div>
         </div>
-        <div class="col-12 col-md-7 mt-2 Titulos">
 
-            <div class="form-group">
-                <label asp-for="CategoriaId" class="control-label"></label>
-                <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId"></select>
-                <span asp-validation-for="CategoriaId" class="text-danger"></span>
+        <div class="row">
+            <div class="col col-md-4 mt-4">
+                <a class="btn btnSalVol" asp-action="Index">Voltar</a>
+            </div>
+            <div class="col-10 col-md mt-4">
+            </div>
+            <div class="col col-md-1 mt-4">
+                <div class="form-group">
+                    <input type="submit" value="Salvar" class="btn btnSalVol" />
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col col-md-4 mt-4">
-            <a class="btn btnSalVol" asp-action="Index">Voltar</a>
-        </div>
-        <div class="col-10 col-md mt-4">
-        </div>
-        <div class="col col-md-1 mt-4">
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btnSalVol" />
-            </div>
-        </div>
-    </div>
+    </form>
 </div>
+
 
 @section Scripts {
     @{

@@ -6,24 +6,26 @@
 
 
 
-<div class="row justify-content-center align-items-center ">
+<div class="row justify-content-center align-items-center marginTop ">
 
-    <div class="col-4 login">
+    <div class="col-3 login">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2 style="color: rgba(0, 0, 0, 0.5)">Cadastrar</h2>
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Nome" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" style="border-radius: 15px" />
+                <input asp-for="Input.Nome" type="text" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" style="border-radius: 15px" />
                 <label asp-for="Input.Nome">Nome completo</label>
                 <span asp-validation-for="Input.Nome" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Telefone" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 15px" />
-                <label asp-for="Input.Telefone">Telefone</label>
-                <span asp-validation-for="Input.Telefone" class="text-danger"></span>
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 15px" />
+                <label asp-for="Input.Password">Senha</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.CPF" class="form-control " autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 15px" />
+                <input id="cpf" asp-for="Input.CPF" type="text" class="form-control"
+                       autocomplete="cpf" aria-required="true" placeholder="cpf"
+                       style="border-radius: 15px" maxlength="14" />
                 <label asp-for="Input.CPF">CPF</label>
                 <span asp-validation-for="Input.CPF" class="text-danger"></span>
             </div>
@@ -48,6 +50,25 @@
     <partial name="_ValidationScriptsPartial" />
 }
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cpfInput = document.getElementById("cpf");
+
+        cpfInput.addEventListener("input", function () {
+            let value = cpfInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+            // Aplica a máscara no formato 999.999.999-99
+            value = value.replace(/(\d{3})(\d)/, "$1.$2");
+            value = value.replace(/(\d{3})(\d)/, "$1.$2");
+            value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+            cpfInput.value = value;
+        });
+    });
+</script>
+
+
 <slan>
-    <img src="~/img/coelhocadastrar.png" alt="Desenho de um coelhinho branco com as orelhas para baixo, segurando uma grande tulipa rosa para cima" width="10" height="400" class="col-2 ms-10 imgCd" />
+    <img src="~/img/coelhocadastrar.png" alt="Desenho de um coelhinho branco com as orelhas para baixo, segurando uma grande tulipa rosa para cima"
+         width="10" height="400" class="col-2 ms-10 imgCd" />
 </slan>

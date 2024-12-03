@@ -75,7 +75,7 @@ namespace ProjetoBackend.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required(ErrorMessage = "\r\nO campo E-mail é obrigatório.")]
-            [EmailAddress]
+            [EmailAddress(ErrorMessage = "\r\nO formato do e-mail é inválido.")]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
@@ -83,8 +83,8 @@ namespace ProjetoBackend.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [StringLength(100, ErrorMessage = "O {0} deve ter pelo menos {2} e no máximo {1} caracteres.\r\n", MinimumLength = 6)]
+            [Required(ErrorMessage = "\r\nO campo Senha é obrigatório.")]
+            [StringLength(100, ErrorMessage = "A senha deve ter pelo menos {2} e no máximo {1} caracteres.\r\n", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }

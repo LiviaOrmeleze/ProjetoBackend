@@ -65,7 +65,7 @@ namespace ProjetoBackend.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required(ErrorMessage = "\r\nO campo E-mail é obrigatório.")]
-            [EmailAddress]
+            [EmailAddress(ErrorMessage = "\r\nO formato do e-mail é inválido.")]
 
             public string Email { get; set; }
 

@@ -9,42 +9,42 @@
     <h1 class="Titulos">Compras</h1>
 
     <form asp-action="Search" method="get">
-        <input type="text" name="nome" class="col" placeholder="Buscar cliente por nome..." />
+        <input type="text" name="nome" style="border:2px solid #AB886D; border-radius:7px; background:#E4E0E1; " class="col p-2" placeholder="Buscar compra por nome..." />
         <button type="submit" class="icone"><ion-icon name="search"></ion-icon></button>
     </form>
 
     <p>
         <a asp-action="Create" class="btn btn-lg btn-primary btnAdicionar mt-3"><ion-icon name="person-add-outline"></ion-icon>  Adicionar Cliente</a>
     </p>
-    <table class="table">
-        <thead>
+    <table class="w-100" style="background:#D6C0B3!important;color:#493628;">
+        <thead style="background:#D6C0B3!important;border:1px solid #AB886D;">
             <tr>
-                <th>
+                <th class="p-2">
                     @Html.DisplayNameFor(model => model.Fornecedor)
                 </th>
-                <th>
+                <th class="p-2">
                     @Html.DisplayNameFor(model => model.DataCompra)
                 </th>
-                <th>
+                <th class="p-2">
                     @Html.DisplayNameFor(model => model.ValorTotal)
-                </th>
+                    </t>
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="border:1px solid #AB886D">
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td class="p-2">
                         @Html.DisplayFor(modelItem => item.Fornecedor.Celular)
                     </td>
-                    <td>
+                    <td class="p-2">
                         @Html.DisplayFor(modelItem => item.DataCompra)
                     </td>
-                    <td>
+                    <td class="p-2">
                         @Html.DisplayFor(modelItem => item.ValorTotal)
                     </td>
-                    <td>
+                    <td class="p-2">
                         <a asp-action="Edit" class="btn btnEdd" asp-route-id="@item.CompraId">Editar</a>
                         <a asp-action="Details" class="btn btnEdd" asp-route-id="@item.CompraId">Detalhes</a>
                         <a asp-action="Delete" class="btn btnEdd" asp-route-id="@item.CompraId">Deletar</a>

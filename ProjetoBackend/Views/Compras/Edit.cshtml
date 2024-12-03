@@ -11,9 +11,9 @@
 
     <h2 class="Titulos">Editar Compra</h2>
 
-    <div class="row">
-        <div class="col-12 col-md-5 mt-2 p-0 Titulos ">
-            <form asp-action="Edit">
+    <form asp-action="Edit">
+        <div class="row">
+            <div class="col-12 col-md-5 mt-2 p-0 Titulos ">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="CompraId" />
                 <div class="form-group">
@@ -21,38 +21,38 @@
                     <select asp-for="FornecedorId" class="form-control" asp-items="ViewBag.FornecedorId"></select>
                     <span asp-validation-for="FornecedorId" class="text-danger"></span>
                 </div>
-            </form>
-        </div>
+            </div>
 
-        <div class="col-12 col-md-5 mt-2 Titulos">
-            <div class="form-group">
-                <label asp-for="DataCompra" class="control-label"></label>
-                <input asp-for="DataCompra" class="form-control" />
-                <span asp-validation-for="DataCompra" class="text-danger"></span>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-2 mt-2 Titulos">
-            <div class="form-group">
-                <label asp-for="ValorTotal" class="control-label"></label>
-                <input asp-for="ValorTotal" class="form-control" />
-                <span asp-validation-for="ValorTotal" class="text-danger"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col col-md-4 mt-4">
-                <a class="btn btnSalVol" asp-action="Index">Voltar</a>
-            </div>
-            <div class="col-10 col-md mt-4">
-            </div>
-            <div class="col col-md-1 mt-4">
+            <div class="col-12 col-md-5 mt-2 Titulos">
                 <div class="form-group">
-                    <input type="submit" value="Salvar" class="btn btnSalVol" />
+                    <label asp-for="DataCompra" class="control-label"></label>
+                    <input asp-for="DataCompra" class="form-control" />
+                    <span asp-validation-for="DataCompra" class="text-danger"></span>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <div class="col-12 col-md-2 mt-2 Titulos">
+                <div class="form-group">
+                    <label asp-for="ValorTotal" class="control-label"></label>
+                    <input asp-for="ValorTotal" class="form-control" />
+                    <span asp-validation-for="ValorTotal" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-md-4 mt-4">
+                    <a class="btn btnSalVol" asp-action="Index">Voltar</a>
+                </div>
+                <div class="col-10 col-md mt-4">
+                </div>
+                <div class="col col-md-1 mt-4">
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn btnSalVol" />
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
 </div>
 
 @section Scripts {

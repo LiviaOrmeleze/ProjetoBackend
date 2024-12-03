@@ -5,7 +5,7 @@
     ViewData["Title"] = "Entrar";
 }
 
-<div class="row justify-content-center align-items-center gap-8">
+<div class="row justify-content-center align-items-center marginTop gap-8">
     <div class="col-3 login">
         <section>
             <form id="account" method="post">
@@ -40,8 +40,11 @@
 
 
                 <div class="d-flex justify-content-between gap-5">
-                    <button id="login-submit" type="submit" class="btn btn-lg btn-primary w-100 me-2 btnLogin">Cadastra-se</button>
-                    <button id="forgot-password" type="submit" class="btn btn-lg btn-primary w-100 btnLogin">Esqueceu a senha?</button>
+                    <a id="login-submit" class="btn btn-lg btn-primary w-100 me-2 btnLogin" asp-area="Identity" asp-page="/Account/Register">Cadastra-se</a>
+
+
+                    <a id="forgot-password" class="btn btn-lg btn-primary w-100 me-2 btnLogin" asp-area="Identity" asp-page="/Account/ForgotPassword">Esqueceu a senha?</a>
+
                 </div>
 
                 <p class="text-center" style="color: rgba(0, 0, 0, 0.5); padding: 10px 10px"> Ao se cadastrar ou realizar o login, você concorda com os Termos, Condições e Políticas da Nuvem de Algodão e Política de Privacidade.</p>
