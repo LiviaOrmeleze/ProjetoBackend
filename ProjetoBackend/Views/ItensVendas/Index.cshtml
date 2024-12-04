@@ -17,14 +17,14 @@
     </form>
 
     <p>
-        <a asp-action="Create" class="btn btn-lg btn-primary btnAdicionar mt-3"><ion-icon name="person-add-outline"></ion-icon>  Adicionar Venda</a>
+        <a asp-action="Create" asp-route-id="@idVendaAtual" class="btn btn-lg btn-primary btnAdicionar mt-3"><ion-icon name="person-add-outline"></ion-icon>  Adicionar Produto</a>
     </p>
     <table class="w-100" style="background:#D6C0B3!important;color:#493628;">
         <thead style="background:#D6C0B3!important;border:1px solid #AB886D;">
             <tr>
-                <th class="p-2">
-                    @Html.DisplayNameFor(model => model.Venda)
-                </th>
+                @* <th class="p-2">
+                @Html.DisplayNameFor(model => model.Venda)
+                </th> *@
                 <th class="p-2">
                     @Html.DisplayNameFor(model => model.Produto)
                 </th>
@@ -32,7 +32,7 @@
                     @Html.DisplayNameFor(model => model.Quantidade)
                 </th>
                 <th class="p-2">
-                    @Html.DisplayNameFor(model => model.ValorUnitario)
+                    Valor Unitário
                 </th>
                 <th class="p-2">
                     @Html.DisplayNameFor(model => model.ValorTotal)
@@ -44,9 +44,9 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td class="p-2">
-                        @Html.DisplayFor(modelItem => item.Venda.VendaId)
-                    </td>
+                    @*  <td class="p-2">
+                @Html.DisplayFor(modelItem => item.Venda.VendaId)
+                </td> *@
                     <td class="p-2">
                         @Html.DisplayFor(modelItem => item.Produto.Nome)
                     </td>
@@ -54,10 +54,10 @@
                         @Html.DisplayFor(modelItem => item.Quantidade)
                     </td>
                     <td class="p-2">
-                        @Html.DisplayFor(modelItem => item.ValorUnitario)
+                        @String.Format("R$ {0:N2}", item.ValorUnitario)
                     </td>
                     <td class="p-2">
-                        @Html.DisplayFor(modelItem => item.ValorTotal)
+                        @String.Format("R$ {0:N2}", (item.ValorUnitario * item.Quantidade))
                     </td>
                     <td>
                         <a asp-action="Edit" class="btn btnEdd" asp-route-id="@item.ItemVendaId">Editar</a>

@@ -1,5 +1,4 @@
 ﻿@model ProjetoBackend.Models.ItemVenda
-
 @{
     ViewData["Title"] = "Create";
 }
@@ -12,7 +11,7 @@
     <div class="col-10 col-md mt-4">
     </div>
 
-    <form asp-action="Create">
+    <form asp-action="Create" asp-route-id="@ViewData["VendaId"]">
         <div class="row">
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -31,7 +30,9 @@
         <div class="row">
             <div class="col-12 col-md-4 mt-2  Titulos">
                 <label asp-for="ProdutoId" class="control-label"></label>
-                <select asp-for="ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId" id="produtoId"></select>
+                <select asp-for="ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId" id="produtoId">
+                    <option>Selecione o Produto</option>
+                </select>
             </div>
 
             <div class="col-12 col-md-4 mt-2 Titulos">

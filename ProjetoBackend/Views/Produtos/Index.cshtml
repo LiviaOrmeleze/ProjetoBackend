@@ -30,7 +30,7 @@
                     @Html.DisplayNameFor(model => model.Estoque)
                 </th>
                 <th class="p-2">
-                    @Html.DisplayNameFor(model => model.Categoria)
+                    Total
                 </th>
                 <th></th>
             </tr>
@@ -43,13 +43,13 @@
                         @Html.DisplayFor(modelItem => item.Nome)
                     </td>
                     <td class="p-2">
-                        @Html.DisplayFor(modelItem => item.Preco)
+                        @String.Format("R$ {0:N2}", item.Preco)
                     </td>
                     <td class="p-2">
                         @Html.DisplayFor(modelItem => item.Estoque)
                     </td>
                     <td class="p-2">
-                        @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                        @String.Format("R$ {0:N2}", item.Preco * item.Estoque)
                     </td>
                     <td class="p-2">
                         <a asp-action="Edit" class="btn btnEdd" asp-route-id="@item.ProdutoId">Editar</a>

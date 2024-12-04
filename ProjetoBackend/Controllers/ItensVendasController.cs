@@ -61,7 +61,7 @@ namespace ProjetoBackend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemVendaId,VendaId,ProdutoId,Quantidade,ValorUnitario,ValorTotal")] ItemVenda itemVenda)
+        public async Task<IActionResult> Create([Bind("ItemVendaId,VendaId,ProdutoId,Quantidade,ValorUnitario,ValorTotal")] ItemVenda itemVenda, Guid? id)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace ProjetoBackend.Controllers
                 // Salvar mudança no banco de dados
                 await _context.SaveChangesAsync();
 
-                return View("Index", listaItens);
+                return RedirectToAction("Index", new { id = id });
 
             }
             ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "Nome", itemVenda.ProdutoId);
@@ -139,7 +139,7 @@ namespace ProjetoBackend.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { id = itemVenda.VendaId });
             }
             ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "Nome", itemVenda.ProdutoId);
             ViewData["VendaId"] = new SelectList(_context.Vendas, "VendaId", "NotaFiscal", itemVenda.VendaId);

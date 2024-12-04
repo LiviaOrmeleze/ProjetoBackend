@@ -9,42 +9,61 @@
 <div class="row justify-content-center align-items-center marginTop ">
 
     <div class="col-3 login">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+
+        <form id="registerForm" method="post" asp-route-returnUrl="@Model.ReturnUrl">
             <h2 style="color: rgba(0, 0, 0, 0.5)">Cadastrar</h2>
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
             <div class="form-floating mb-3">
-                <input asp-for="Input.Nome" type="text" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" style="border-radius: 15px" />
+                <input asp-for="Input.Nome" type="text" class="form-control" placeholder="Nome completo" style="border-radius: 15px" />
                 <label asp-for="Input.Nome">Nome completo</label>
                 <span asp-validation-for="Input.Nome" class="text-danger"></span>
             </div>
+
             <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 15px" />
-                <label asp-for="Input.Password">Senha</label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input id="cpf" asp-for="Input.CPF" type="text" class="form-control"
-                       autocomplete="cpf" aria-required="true" placeholder="cpf"
-                       style="border-radius: 15px" maxlength="14" />
+                <input id="cpf" asp-for="Input.CPF" type="text" class="form-control" placeholder="CPF" style="border-radius: 15px" maxlength="14" />
                 <label asp-for="Input.CPF">CPF</label>
                 <span asp-validation-for="Input.CPF" class="text-danger"></span>
             </div>
+
             <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 15px" />
+                <input id="celular" asp-for="Input.Telefone" type="text" class="form-control" placeholder="Telefone" maxlength="15" style="border-radius: 15px" />
+                <label asp-for="Input.Telefone">Telefone</label>
+                <span asp-validation-for="Input.Telefone" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" type="email" class="form-control" placeholder="E-mail" style="border-radius: 15px" />
                 <label asp-for="Input.Email">E-mail</label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-cd btn-primary btnCadastrar">
-                Entrar
-            </button>
-            <div>
-                <p class="text-center" style="color: rgba(0, 0, 0, 0.5);  padding: 10px 10px">
-                    Ao se cadastrar ou realizar o login, você concorda com os Termos, Condições e Políticas da Nuvem de Algodão e Política de Privacidade.
-                </p>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" type="password" class="form-control" placeholder="Senha" style="border-radius: 15px" />
+                <label asp-for="Input.Password">Senha</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" type="password" class="form-control" placeholder="Confirmar senha" style="border-radius: 15px" />
+                <label asp-for="Input.ConfirmPassword">Confirmar senha</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="w-100 btn btn-lg btn-primary btnLogin">Cadastrar</button>
         </form>
+        <div>
+            <p class="text-center m-0 p-2 pb-0" style="color: rgba(0, 0, 0, 0.5);">
+                Ao se cadastrar ou realizar o login, você concorda com os Termos, Condições e Políticas da Nuvem de Algodão e Política de Privacidade.
+            </p>
+        </div>
     </div>
 </div>
+
+
+
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
@@ -52,6 +71,19 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        const celInput = document.getElementById("celular");
+
+        celInput.addEventListener("input", function () {
+            let value = celInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+            // Aplica a máscara no formato (99) 99999-9999
+            value = value.replace(/^(\d{2})(\d)/, "($1) $2");
+            value = value.replace(/(\d{5})(\d)/, "$1-$2");
+
+            celInput.value = value;
+        });
+
+
         const cpfInput = document.getElementById("cpf");
 
         cpfInput.addEventListener("input", function () {
@@ -65,6 +97,7 @@
             cpfInput.value = value;
         });
     });
+
 </script>
 
 
